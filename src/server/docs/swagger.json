@@ -1,0 +1,160 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Country-Currency-Service",
+    "description": "The following are the available endpoints for Country-Currency-Service.",
+    "version": "0.1.0",
+    "contact": {
+      "name": "Varun Subramanian"
+    }
+  },
+  "paths": {
+    "/api/v1/country/{countryName}": {
+      "get": {
+        "description": "The seed endpoint is used to get the country information",
+        "parameters": [
+          {
+            "name": "countryName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sample Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "Sample Response Format": {
+                    "value": {
+                      "result": [
+                        {
+                          "name": "<string_countryName>",
+                          "currencies": [
+                            {
+                              "code": "<string_currencyCode>",
+                              "name": "<string_currencyName>",
+                              "symbol": "<string_currencysymbol>"
+                            }
+                          ],
+                          "population": "<number_population>"
+                        }
+                      ]
+                    }
+                  },
+                  "Sample Response": {
+                    "value": {
+                      "result": [
+                        {
+                          "name": "British Indian Ocean Territory",
+                          "currencies": [
+                            {
+                              "code": "USD",
+                              "name": "United States dollar",
+                              "symbol": "$"
+                            }
+                          ],
+                          "population": 3000
+                        },
+                        {
+                          "name": "India",
+                          "currencies": [
+                            {
+                              "code": "INR",
+                              "name": "Indian rupee",
+                              "symbol": "₹"
+                            }
+                          ],
+                          "population": 1295210000
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/currency": {
+      "get": {
+        "description": "The seed endpoint is used to get the currency information",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "amount",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sample Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "Sample Response Format": {
+                    "value": {
+                      "result": [
+                        {
+                          "timestamp": "<timestamp>",
+                          "baseCurrency": "<base_string>",
+                          "convertedCurrency": "<convereted_string>",
+                          "date": "<date>",
+                          "rates": "<rates_number>",
+                          "convertedRate": "<converted_rate_number>"
+                        }
+                      ]
+                    }
+                  },
+                  "Sample Response": {
+                    "value": {
+                      "result": [
+                        {
+                          "timestamp": 1600573745,
+                          "baseCurrency": "EUR",
+                          "convertedCurrency": "INR",
+                          "date": "2020-09-20",
+                          "rates": 87.152209,
+                          "convertedRate": "1743.04"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

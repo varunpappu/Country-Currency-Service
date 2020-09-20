@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "module": "commonjs",
+      "sourceMap": true,
+      "rootDir": "src",
+      "outDir": "dist/",
+      "alwaysStrict": true,
+      "allowUnreachableCode": true,
+      "noUnusedLocals": true,
+      "typeRoots": ["node_modules/@types", "typings"],
+      "experimentalDecorators": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+    },
+    "exclude": ["src/client", "spec", "node_modules", "**/*-spec.*"]
+  }

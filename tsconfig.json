@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "dist/",
+    "jsx": "react",
+    "alwaysStrict": true,
+    "allowUnreachableCode": true,
+    "noUnusedLocals": false,
+    "typeRoots": ["node_modules/@types", "typings"],
+    "experimentalDecorators": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "**/*-spec.*"]
+}
