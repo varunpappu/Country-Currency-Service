@@ -34,7 +34,13 @@ FORMAT: 1A
                         "code": "<string_currencyCode>",
                         "name": "<string_currencyName>",
                         "symbol": "<string_currencysymbol>"
-                        }
+                        },
+                        "exchangeRate": {
+                            "timestamp": <timestamp>,
+                            "baseCurrency": <base_currency_string>,
+                            "date": <date>,
+                            "rates": <exchange_rate_number>
+                        },
                     ],
                     "population": "<number_population>"
                     }
@@ -51,13 +57,16 @@ FORMAT: 1A
     + Body
 
             {
-                "result": {
-                    "timestamp": "<timestamp>",
-                    "base": "<string_base_currency>",
-                    "date": "<date>",
-                    "rates": "<number_conversion_rate>",
-                    "convertedRate": "<number_converted_rate>"
-                }
+                "result": [
+                    {
+                      "timestamp": "<timestamp>",
+                      "baseCurrency": "<string_base_currency>",
+                      "convertedCurrency": "<string_converted_currency>",
+                      "date": "<date>",
+                      "rates": "<number_conversion_rate>",
+                      "convertedRate": "<number_converted_rate>"
+                   },
+               ]
             }
 
 ## Get Swagger Docs  [GET] [/docs]
